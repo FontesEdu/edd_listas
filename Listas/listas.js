@@ -22,7 +22,7 @@ export class listaLigada {
     if (this.size () === 0){
         this.head = node
     } else {
-        let atual = this.head
+        let current = this.head
         while (current.next !== null) {
             current = current.next
         }
@@ -61,6 +61,7 @@ export class listaLigada {
             this.removeAt(pos)
         }
     }
+
     removeAt(){
         if (position >= this.size()) {
             console.log(`Posição inválida. Escolha o intervalo de 0 até ${this.size() - 1}`)
@@ -99,19 +100,24 @@ export class listaLigada {
     }
 
     toString(){
+        if (this.size () === 0) {
+            return "Lista vazia"
+        }
 
+        return this.head.toString
     }
     
     size(){
-
+        return this._size
     }
 
     isEmpty(){
-
+        return this.size() === 0
     }
 
     clear(){
-        
+        this.head = null
+        this._size = 0
     }
 
 }
